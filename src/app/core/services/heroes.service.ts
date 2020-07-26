@@ -68,4 +68,8 @@ export class HeroesService {
   getHeroes(): Heroe[] {
     return this.heroes;
   }
+
+  fetchHero(index: number): Heroe {
+    return this.heroes[index] ? this.heroes[index] : undefined;
+  }
 }
