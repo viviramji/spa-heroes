@@ -13,8 +13,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {}
 
   searchHeroes(searchValue: string): Heroe[] {
-    searchValue = searchValue.toLowerCase();
-
+    this.router.navigate(['/heroe-found', searchValue]);
 
     return undefined;
   }

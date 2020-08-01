@@ -76,9 +76,8 @@ export class HeroesService {
   getHeroeByName(name: string): Heroe[] {
     name = name.toLowerCase();
     let foundHero: Heroe[] = [];
-
     this.heroes.forEach((heroe) => {
-      if (heroe.name.toLowerCase() === name){
+      if (heroe.name.toLowerCase().includes(name)){
         foundHero.push(heroe);
       }
     });
