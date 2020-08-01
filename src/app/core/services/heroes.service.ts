@@ -72,4 +72,17 @@ export class HeroesService {
   fetchHero(index: number): Heroe {
     return this.heroes[index] ? this.heroes[index] : undefined;
   }
+
+  getHeroeByName(name: string): Heroe[] {
+    name = name.toLowerCase();
+    let foundHero: Heroe[] = [];
+
+    this.heroes.forEach((heroe) => {
+      if (heroe.name.toLowerCase() === name){
+        foundHero.push(heroe);
+      }
+    });
+
+    return foundHero;
+  }
 }
