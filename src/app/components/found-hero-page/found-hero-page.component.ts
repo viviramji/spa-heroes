@@ -21,8 +21,11 @@ export class FoundHeroPageComponent implements OnInit {
   ngOnInit(): void {
     this.activateRoute.params.subscribe((params) => {
       this.searchValue = params.searchValue;
-      this.heroes = this.heroByName(params.searchValue);
-      console.log(this.heroes);
+      if (params.searchValue) {
+        this.heroes = this.heroByName(params.searchValue);
+      } else {
+        this.heroes = this.getAllHeroes();
+      }
     });
   }
 
@@ -34,8 +37,11 @@ export class FoundHeroPageComponent implements OnInit {
     this.router.navigate(['/heroes']);
   }
 
+  getAllHeroes(): Heroe[] {
+    return this.heroesService.getHeroes();
+  }
+
   heroByName(searchValue: string): Heroe[] {
-    console.log(searchValue);
     return this.heroesService.getHeroeByName(searchValue);
   }
 }

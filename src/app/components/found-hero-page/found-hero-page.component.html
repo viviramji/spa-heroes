@@ -24,11 +24,13 @@
 <!-- * / list of found heroes -->
 
 <!-- * / No found hero -->
-<div *ngIf="heroes.length === 0">
-    <div class="alert alert-warning" role="alert">
-        Not found heroes with the words: '{{ searchValue }}'
+<div class="row animated fadeIn fast" *ngIf="heroes.length === 0">
+    <div class="col-md-12">
+        <div class="alert alert-warning" role="alert">
+            Not found heroes with the words: '{{ searchValue }}'
+        </div>
+        <button (click)="backHeroes()" class="btn btn-primary btn-block">
+            Back hero list
+        </button>
     </div>
-    <button (click)="backHeroes()" class="btn btn-primary btn-block">
-        Back hero list
-    </button>
 </div>
