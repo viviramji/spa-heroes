@@ -23,6 +23,7 @@ export class FoundHeroPageComponent implements OnInit {
       this.searchValue = params.searchValue;
       if (params.searchValue) {
         this.heroes = this.heroByName(params.searchValue);
+        console.log(this.heroes);
       } else {
         this.heroes = this.getAllHeroes();
       }

@@ -4,4 +4,5 @@ export class Heroe {
   img: string;
   aparicion: string;
   casa: string;
+  index?: number;
 }

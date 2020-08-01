@@ -76,11 +76,15 @@ export class HeroesService {
   getHeroeByName(name: string): Heroe[] {
     name = name.toLowerCase();
     let foundHero: Heroe[] = [];
-    this.heroes.forEach((heroe) => {
-      if (heroe.name.toLowerCase().includes(name)){
+
+    for (let i = 0; i < this.heroes.length; i++) {
+      let heroe = this.heroes[i];
+
+      if (heroe.name.toLowerCase().includes(name)) {
+        heroe.index = i;
         foundHero.push(heroe);
       }
-    });
+    }
 
     return foundHero;
   }
